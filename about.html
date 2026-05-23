@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Louie - About Me</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <div class="page">
+
+  
+    <aside class="sidebar">
+
+      <div class="sidebar-top">
+        <div class="profile">
+          <div class="profile-img"></div>
+          <h2>Louie Smith</h2>
+        </div>
+
+        <nav class="menu">
+          <a href="index.html">Home</a>
+          <a href="collection.html">Collection</a>
+          <a class="active" href="about.html">About Me</a>
+          <a href="services.html">My Services</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter Email Address">
+          <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- HERO ABOUT -->
+      <section class="about-hero">
+
+        <div class="about-img"></div>
+
+        <div class="about-info">
+          <div class="about-text">
+
+            <span class="subheading">Nice To Meet You</span>
+            <h1 class="big-name">Smith</h1>
+
+            <h2 class="about-title">My Name is Louie Smith</h2>
+
+            <p>
+              I am A Photographer from America Far far away, behind the word mountains,
+              far from the countries Vokalia and Consonantia, there live the blind texts.
+              Separated they live in Bookmarksgrove right at the coast of the Semantics,
+              a large language ocean.
+            </p>
+
+            <h3 class="signature">Louie Smith</h3>
+
+            <div class="social">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+     
+      <section class="about-counters">
+
+        <div class="counter-box">
+          <h2 class="counter" data-target="120">0</h2>
+          <p>Pounds of<br>Equipment</p>
+        </div>
+
+        <div class="counter-box">
+          <h2 class="counter" data-target="150">0</h2>
+          <p>Studio<br>Session</p>
+        </div>
+
+        <div class="counter-box">
+          <h2 class="counter" data-target="200">0</h2>
+          <p>Finished<br>Photosessions</p>
+        </div>
+
+        <div class="counter-box">
+          <h2 class="counter" data-target="200">0</h2>
+          <p>Happy<br>Clients</p>
+        </div>
+
+      </section>
+
+      
+      <section class="instagram">
+        <h2>FOLLOW ME ON INSTAGRAM</h2>
+
+        <div class="insta-photos">
+          <div class="insta-img img1"></div>
+          <div class="insta-img img2"></div>
+          <div class="insta-img img3"></div>
+          <div class="insta-img img4"></div>
+          <div class="insta-img img5"></div>
+        </div>
+      </section>
+
+      
+      <footer class="footer">
+
+        <div class="footer-container">
+
+          <div class="footer-box">
+            <h3>RECENT PHOTOS</h3>
+
+            <div class="recent-photos">
+              <a class="photo p1" href="#"></a>
+              <a class="photo p2" href="#"></a>
+              <a class="photo p3" href="#"></a>
+              <a class="photo p4" href="#"></a>
+              <a class="photo p5" href="#"></a>
+              <a class="photo p6" href="#"></a>
+            </div>
+          </div>
+
+          <div class="footer-box">
+            <h3>ARCHIVES</h3>
+
+            <ul class="archives">
+              <li><span>November 2018</span> <span>(105)</span></li>
+              <li><span>October 2018</span> <span>(212)</span></li>
+              <li><span>September 2018</span> <span>(150)</span></li>
+              <li><span>August 2018</span> <span>(100)</span></li>
+              <li><span>July 2018</span> <span>(200)</span></li>
+            </ul>
+          </div>
+
+          <div class="footer-box">
+            <h3>HAVE A QUESTIONS?</h3>
+
+            <div class="contact-list">
+
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>203 Fake St. Mountain View, San Francisco, California, USA</p>
+              </div>
+
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>+2 392 3929 210</p>
+              </div>
+
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <p>info@yourdomain.com</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="copyright">
+          <p>Copyright ©2026 All rights reserved | This template is made with ♥ by Colorlib</p>
+        </div>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+  
+  <script>
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+      counter.innerText = "0";
+
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText;
+
+        const increment = target / 60;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCounter, 50);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCounter();
+    });
+  </script>
+
+</body>
+</html>
